@@ -12,7 +12,8 @@ echo '
 echo 'enter your root password'
 passwd
 pacman -S intel-ucode grub efibootmgr
-mkdir /boot/efi
-grub-install --efi-directory=/boot/efi
+cd /boot
+mkdir EFI
+grub-install --efi-directory=/boot/EFI
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd
