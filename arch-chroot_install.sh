@@ -11,8 +11,6 @@ echo '
 127.0.1.1	arch.localdomain	arch' >> /etc/hosts
 echo 'enter your root password'
 passwd
-cd /boot
-mkdir EFI
-grub-install --efi-directory=/boot/EFI
+grub-install --efi-directory=/boot
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd
