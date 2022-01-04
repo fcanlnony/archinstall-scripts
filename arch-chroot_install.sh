@@ -13,7 +13,7 @@ echo 'enter your root password'
 passwd
 systemctl enable dhcpcd
 pacman -S intel-ucode grub efibootmgr
-read -p 'enter your efi_system_partition' efi_system_partition
+read -p 'enter your efi_system_partition : ' efi_system_partition
 echo mount >> grub.sh  $efi_system_partition /boot
 echo '
 mkdir /boot/EFI
