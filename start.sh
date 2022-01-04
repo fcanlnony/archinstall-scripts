@@ -1,5 +1,4 @@
 #/bin/bash
-#/bin/bash
 echo 'Welcome to Arch GNU/Linux install scripts'
 timedatectl set-ntp true
 echo 'warring!partition look like /dev/sdx'
