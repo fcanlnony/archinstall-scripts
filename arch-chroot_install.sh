@@ -11,6 +11,13 @@ echo '
 127.0.1.1	arch.localdomain	arch' >> /etc/hosts
 echo 'enter your root password'
 passwd
-grub-install --efi-directory=/boot
-grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable dhcpcd
+pacman -S intel-ucode grub efibootmgr
+read -p 'enter your efi_system_partition' efi_system_partition
+echo mount >> grub.sh  $efi_system_partition /boot
+echo '
+mkdir /boot/EFI
+grub-install --efi-directory=/boot/EFI
+grub-mkconfig -o /boot/grub/grub.cfg ' >> grub.sh
+chmod +x grub.sh
+bash ./grub.sh
